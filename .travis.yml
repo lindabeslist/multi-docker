@@ -22,18 +22,17 @@ after_success:
   - docker push webbylin/multi-server
   - docker push webbylin/multi-worker
 
-
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "eu-central-1"
-#   app: "docker-react"
-#   env: "DockerReact-env"
-#   bucket_name: "elasticbeanstalk-eu-central-1-100164877691"
-#   bucket-path: "docker-react"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-100164877691"
+  bucket-path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
 
 
